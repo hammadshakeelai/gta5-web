@@ -2,8 +2,7 @@
 <html lang="en">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<script src="/coi-serviceworker.min.js"></script>
-<script src="coi-serviceworker.min.js"></script>
+<script src="./coi-serviceworker.min.js"></script>
 <title>PlayGTA5 · Play & browser guide</title>
 <style>
 :root{color-scheme:light;--ink:#203c32;--paper:#f5f3ec;--line:#d9ded3}*{box-sizing:border-box}body{font:17px/1.65 'Segoe UI',system-ui,sans-serif;background:var(--paper);color:var(--ink);margin:0;min-height:100dvh}main{max-width:1180px;margin:auto;padding:32px clamp(20px,5vw,64px) 80px}h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(42px,7vw,84px);line-height:1.02;letter-spacing:-.055em;max-width:850px;margin:56px 0 28px}h2{font-size:24px;line-height:1.2;letter-spacing:-.025em}a{color:#225b40;text-underline-offset:4px}nav{display:flex;align-items:center;flex-wrap:wrap;gap:16px;margin:24px 0}.button,button{background:var(--ink);color:white;border:0;border-radius:999px;padding:13px 22px;font:inherit;text-decoration:none;cursor:pointer;min-height:44px}a:focus-visible,button:focus-visible,summary:focus-visible{outline:3px solid #ca7700;outline-offset:4px}pre{background:#e9ede4;border:1px solid var(--line);border-radius:20px;padding:22px;white-space:pre-wrap;overflow-wrap:anywhere;font:14px/1.6 ui-monospace,monospace}.label{font-size:12px;letter-spacing:.14em;text-transform:uppercase;border-bottom:1px solid var(--line);padding-bottom:20px}details{margin:16px 0;background:#fffefa;border:1px solid var(--line);padding:22px;border-radius:20px}summary{cursor:pointer;font-weight:600;min-height:28px}code{overflow-wrap:anywhere}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:30px 0}.card{background:#e7ecdf;border-radius:24px;padding:26px;display:flex;flex-direction:column}.card p{flex:1}.card a{display:inline-flex;align-self:flex-start}.muted{color:#54645b;font-size:14px}.intro{max-width:760px;font-size:19px}.badge{font-size:12px;letter-spacing:.08em;text-transform:uppercase}#status{padding:18px 22px;border-left:4px solid #728863;background:#e7ecdf;border-radius:0 14px 14px 0}@media(max-width:768px){.grid{grid-template-columns:1fr}main{padding:20px 20px 60px}h1{margin-top:36px}nav{align-items:stretch;flex-direction:column}nav a{padding:12px 0}.button{padding:13px 22px}details{padding:18px}button{max-width:100%}}
@@ -13,9 +12,9 @@
 <h1>Your next visit<br>to Los Santos.</h1>
 <p class="intro">Pick a graphics profile, check your device, and get into the game. Start with Efficiency if this is your first visit.</p>
 <div class="grid" aria-label="Graphics profiles">
-<section class="card"><span class="badge">01 / Lower load</span><h2>Efficiency</h2><p>720p, light graphics, no shadows and a 30 FPS cap. A gentler starting point for laptops.</p><a class="button" href="../?low=1&amp;fps=30&amp;res=1280x720&amp;shadows=0">Play efficiency ↗</a></section>
-<section class="card"><span class="badge">02 / Everyday play</span><h2>Balanced</h2><p>720p, light graphics and a 60 FPS cap. Trade some detail for smoother motion.</p><a class="button" href="../?low=1&amp;fps=60&amp;res=1280x720&amp;shadows=0">Play balanced ↗</a></section>
-<section class="card"><span class="badge">03 / More detail</span><h2>Quality</h2><p>1080p, full graphics and shadows, with a 60 FPS cap. Requires more GPU and memory headroom.</p><a class="button" href="../?low=0&amp;fps=60&amp;res=1920x1080&amp;shadows=1">Play quality ↗</a></section>
+<section class="card"><span class="badge">01 / Lower load</span><h2>Efficiency</h2><p>720p, light graphics, no shadows and a 30 FPS cap. A gentler starting point for laptops.</p><a class="button" href="https://gta5-87g.pages.dev/?low=1&amp;fps=30&amp;res=1280x720&amp;shadows=0" target="_blank">Play efficiency ↗</a></section>
+<section class="card"><span class="badge">02 / Everyday play</span><h2>Balanced</h2><p>720p, light graphics and a 60 FPS cap. Trade some detail for smoother motion.</p><a class="button" href="https://gta5-87g.pages.dev/?low=1&amp;fps=60&amp;res=1280x720&amp;shadows=0" target="_blank">Play balanced ↗</a></section>
+<section class="card"><span class="badge">03 / More detail</span><h2>Quality</h2><p>1080p, full graphics and shadows, with a 60 FPS cap. Requires more GPU and memory headroom.</p><a class="button" href="https://gta5-87g.pages.dev/?low=0&amp;fps=60&amp;res=1920x1080&amp;shadows=1" target="_blank">Play quality ↗</a></section>
 </div><p class="muted">FPS settings are limits, not guaranteed performance. Switching profiles reloads the game; save first. Use the same browser and address to keep access to that browser's saves. Press F8 or “Hide” to hide the extra help and enhanced controls together.</p>
 <h2>Your device, checked</h2>
 <p id="status" role="status">Checking WebGPU, shared memory, and file serving…</p>
@@ -23,7 +22,7 @@
 <details open><summary>Stuck at 66%? Check graphics acceleration first</summary>
 <p>In Chrome, open <code>chrome://settings/system</code>. Turn on <strong>Use graphics acceleration when available</strong>, then choose <strong>Relaunch</strong>. In Edge, open Settings → System and performance and enable the equivalent setting, then restart Edge. Reopen this page and run the checks again.</p>
 <p>This fixes one cause of unavailable WebGPU, not every loading freeze. If it still stops, collect the first red console error and check <code>chrome://gpu</code> or <code>edge://gpu</code>. Do not disable antivirus or use unsafe GPU flags.</p></details>
-<nav><a class="button" href="../?low=1&amp;fps=30&amp;res=1280x720">Start with lower memory · 720p / 30 FPS</a><a href="../">Start with game defaults</a></nav>
+<nav><a class="button" href="https://gta5-87g.pages.dev/?low=1&amp;fps=30&amp;res=1280x720" target="_blank">Start with lower memory · 720p / 30 FPS ↗</a><a href="https://gta5-87g.pages.dev/" target="_blank">Start with game defaults ↗</a></nav>
 <details open><summary>Choose a performance preset</summary>
 <p>These change actual engine settings. FPS values are caps, not promised frame rates. Compare presets in the same scene after shaders finish loading.</p>
 <nav><a href="../?low=1&amp;fps=60&amp;res=960x540&amp;shadows=0">Performance · 540p / 60 cap</a><a href="../?low=1&amp;fps=60&amp;res=1280x720&amp;shadows=0">Balanced · 720p / 60 cap</a><a href="../?low=1&amp;fps=60&amp;res=1920x1080&amp;shadows=0">1080p light · 60 cap</a><a href="../?low=1&amp;fps=0&amp;res=960x540&amp;shadows=0">Benchmark · 540p / uncapped</a></nav>
@@ -42,5 +41,5 @@
 <p>Close every game tab, stop the local server with Ctrl+C if you use one, and launch again. Update the browser and graphics driver (macOS updates supply Mac drivers). Check <code>chrome://gpu</code> or <code>edge://gpu</code> for hardware acceleration and Problems Detected. Close GPU-heavy apps. Post the first error and diagnostics to <a href="https://github.com/alihammoud21/playgta5/issues/1">issue #1</a>.</p></details>
 <p>If files fail to load, run Verify-Game.cmd (Windows) or Verify-Game.command (Mac). This page makes no changes to saves or browser storage. Review copied diagnostics before posting; they include browser and GPU information.</p>
 <noscript>JavaScript is required for compatibility checks and gameplay.</noscript>
-</main><script src="/__support/check.js"></script>
+</main><script src="./check.js"></script>
 </html>
