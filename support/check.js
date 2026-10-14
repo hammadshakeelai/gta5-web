@@ -8,7 +8,7 @@ report.deviceMemoryNote = 'Approximate browser-provided value; report installed 
 report.wasmMemory64 = typeof WebAssembly !== 'undefined' && WebAssembly.validate(
   new Uint8Array([0,97,115,109,1,0,0,0,5,4,1,7,0,1]));
 const output = document.getElementById('report');
-const launchLinks = [...document.querySelectorAll('a[href^="/?"], a[href="/"]')];
+const launchLinks = [...document.querySelectorAll('a[href*="low="], a[href^="/?"], a[href="/"], a[href^="../?"], a[href="../"]')];
 function allowLaunch(allowed) {
   for (const link of launchLinks) {
     link.setAttribute('aria-disabled', String(!allowed));
@@ -36,12 +36,13 @@ async function check() {
     if (!report.crossOriginIsolated || !report.sharedArrayBuffer) throw new Error('Shared WebAssembly memory is unavailable. Open the site directly in your browser, outside embedded app browsers.');
     if (!report.wasmMemory64) throw new Error('This browser does not support the shared 64-bit WebAssembly memory required by this game. On iPhone/iPad, check for an iOS update and rerun this check. Lower-memory mode cannot fix this requirement; this engine cannot run in your current browser.');
     if (!report.offscreenCanvas) throw new Error('OffscreenCanvas is unavailable; this engine cannot render in the current browser.');
-    const response = await fetch('/', { cache: 'no-store' });
+    const baseRoot = new URL('../', location.href);
+    const response = await fetch(baseRoot.href, { cache: 'no-store' });
     report.pageHTTP = response.status;
     const html = await response.text();
     const build = html.match(/\/b\/([a-zA-Z0-9_-]+)\//);
     if (build) {
-      const wasm = await fetch(`/b/${build[1]}/game.wasm`, { headers: { Range: 'bytes=0-3' } });
+      const wasm = await fetch(new URL(`b/${build[1]}/game.wasm`, baseRoot).href, { headers: { Range: 'bytes=0-3' } });
       report.wasmHTTP = wasm.status;
       if (wasm.status === 206) {
         report.wasmSignature = Array.from(new Uint8Array(await wasm.arrayBuffer())).join(',') === '0,97,115,109';
